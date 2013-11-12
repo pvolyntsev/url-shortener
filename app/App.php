@@ -98,9 +98,6 @@ class App {
 			return;
 		}
 
-		echo '<pre>';
-		debug_print_backtrace();
-		echo '</pre>';
 		switch ($errno) {
 			case E_USER_ERROR:
 				echo "<b>My ERROR</b> [$errno] $errstr<br />\n";
@@ -108,7 +105,7 @@ class App {
 				echo ", PHP " . PHP_VERSION . " (" . PHP_OS . ")<br />\n";
 				echo "Aborting...<br />\n";
 				App::response()->sendContent();
-				exit(1);
+				App::response()->doExit();
 				break;
 
 			case E_USER_WARNING:
@@ -153,6 +150,7 @@ class App {
 	}
 
 	/**
+	 * Convert string from AaaBbbCcc to aaa_bbb_ccc
 	 * @param $string
 	 * @param string $splitter
 	 * @return string
@@ -163,6 +161,7 @@ class App {
 	}
 
 	/**
+	 * Convert string from aaa_bbb_ccc to AaaBbbCcc
 	 * @param $string
 	 * @param bool $capitalizeFirstCharacter
 	 * @return mixed
