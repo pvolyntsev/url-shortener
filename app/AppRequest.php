@@ -55,7 +55,6 @@ class AppRequest {
 		if(isset($_COOKIE)) {
 			$this->_cookie = $_COOKIE;
 		}
-		unset($_GET); unset($_POST); unset($_COOKIE); unset($_request);
 	}
 
 	/**
