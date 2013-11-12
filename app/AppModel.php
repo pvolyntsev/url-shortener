@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class provides access to database tables in object manner
+ * That also called ORM (Object-relational mapping)
+ */
 abstract class AppModel {
 
 	/**
@@ -10,7 +14,7 @@ abstract class AppModel {
 
 	/**
 	 * Method must return the name of the column, which is the primary key of the table.
-	 *    Or array of names if primary key is complex
+	 *    TODO Or array of names if primary key is complex
 	 * @return string|string[]
 	 */
 	abstract public static function getPrimaryKey();
@@ -21,6 +25,11 @@ abstract class AppModel {
 	 */
 	abstract public static function getColumnNames();
 
+	/**
+	 * Returns one instance of current class found by primary key $pk
+	 * @param mixed $pk
+	 * @return AppModel|false
+	 */
 	public static function findOneByPk($pk) {
 		$columns = static::getColumnNames();
 		$columnsCommaList = implode(',', $columns);
@@ -39,6 +48,10 @@ abstract class AppModel {
 		return false;
 	}
 
+	/**
+	 * Set object propertios with values from $values
+	 * @param array $values
+	 */
 	protected function populate($values) {
 		$columns = static::getColumnNames();
 		foreach($columns as $column) {
@@ -46,20 +59,25 @@ abstract class AppModel {
 		}
 	}
 
+	/**
+	 * Save object into database
+	 */
 	public function save() {
 		$columns = static::getColumnNames();
 		$columnsCommaList = implode(',', $columns);
 		$tableName = static::getTableName();
 		$primaryKeyColumn = static::getPrimaryKey();
 
-		$valuesPlaceholders = implode(',', array_fill(0, count($columns), '?'));
+		$valuesPlaceholders = implode(',', array_fill(0, count($columns), '?')); // -> ?, ?, ?
 		$values = array();
 		foreach($columns as $column) {
 			$values[] = $this->{$column};
 		}
 
-		App::db()->execute("LOCK TABLES {$tableName} WRITE");
+		App::db()->execute("LOCK TABLES {$tableName} WRITE"); // "transaction lock" for MyISAM tables
 
+		// TODO Update object if already saved
+		
 		$sql = "INSERT INTO {$tableName} ({$columnsCommaList}) VALUES ({$valuesPlaceholders})";
 		$newPk = App::db()->execute($sql, $values);
 		$this->{$primaryKeyColumn} = $newPk;
