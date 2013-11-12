@@ -1,10 +1,16 @@
 <?php
 
+/**
+ * Class converts big unsigned decimal identifiers into short alphanumeric code
+ * And restore decimal identifier from code
+ * 
+ * @see https://github.com/sagargp/coolsitebro/blob/master/alphaID.php
+ */
 class AlphaId {
 
 	protected static $index = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-	// Convert alphabetical code to decimal number
+	// Convert alphanumeric code to decimal number
 	public static function toId($in, $pad_up = false) {
 		$base = strlen(static::$index);
 
@@ -29,7 +35,7 @@ class AlphaId {
 	}
 
 	/**
-	 * Convert decimal number to alphabetical code
+	 * Convert decimal number to alphanumeric code
 	 */
 	public static function toAlpha($in, $pad_up = false) {
 		$base = strlen(static::$index);
