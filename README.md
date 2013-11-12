@@ -13,7 +13,7 @@ Application was created from the scratch during 2 evenings.
 * AJAX on native javascript
 
 
-All PHP classes are shown at [main_classes](https://raw.github.com/pvolyntsev/url-shortener/master/docs/main_classes.png) and [classes](https://raw.github.com/pvolyntsev/url-shortener/master/docs/classes.png)
+All PHP classes are shown at [base classes](https://raw.github.com/pvolyntsev/url-shortener/master/docs/main_classes.png) and [application classes](https://raw.github.com/pvolyntsev/url-shortener/master/docs/classes.png)
 
 
 REQUIREMENTS:
