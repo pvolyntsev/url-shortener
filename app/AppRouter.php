@@ -27,7 +27,7 @@ class AppRouter {
 			App::response()->sendNotFoundAndExit();
 		}
 
-		$rule[] = array(); // sizeof must me not less than 3
+		$rule[] = array(); // sizeof($rule) must be not less than 3
 		list($controller, $action, $parameters) = $rule;
 		$controller = App::camelize($controller, true).'Controller';
 		$action = App::camelize($action, false).'Action';
