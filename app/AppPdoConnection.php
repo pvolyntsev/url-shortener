@@ -1,18 +1,29 @@
 <?php
 
+/**
+ * Class provides lasy initialization of database connection and some query methods
+ */
 class AppPdoConnection {
 
+	/**
+	 * @var PDO
+	 */
 	protected $connection;
 
+	/**
+	 * @var string
+	 */
 	protected $connectionString;
 
-//	protected $emulatePrepare = true;
-
+	/**
+	 * @var string
+	 */
 	protected $username = '';
 
+	/**
+	 * @var string
+	 */
 	protected $password = '';
-
-	protected $charset = 'utf8';
 
 	protected $driverOptions = array();
 
