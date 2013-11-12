@@ -1,0 +1,53 @@
+body {
+	color: #5E5E5E;
+	font: 13px normal Arial, Helvetica, sans-serif;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, p, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+	border: 1px solid silver;
+	margin: 3em auto;
+	width: 960px;
+}
+
+header {
+	color: #174482;
+	font-size: 26px;
+	padding: 30px 20px 30px 100px;
+}
+
+table {
+	background: #ECECEC;
+	border: 1px solid silver;
+	border-width: 1px 0;
+	padding: 30px 20px 30px 100px;;
+	color: #5E5E5E;
+	width: 100%;
+	text-align: left;
+}
+
+table td {
+	width: 50%;
+	white-space: nowrap;
+}
+
+th {
+	text-align: left;
+}
+
+input {
+	font-size: 16px;
+}
+
+footer {
+	padding: 0.5em;
+	color: #5E5E5E;
+}
+
+.error {
+	color: red;
+}

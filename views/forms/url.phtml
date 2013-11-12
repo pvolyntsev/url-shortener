@@ -1,0 +1,36 @@
+<?php
+/**
+ * View for FormUrl form
+ */
+
+/** @var $form UrlForm */
+$form = $this->form;
+
+?>
+<form id="<?php echo $form->getId() ?>" action="<?php echo $this->action ?>" method="<?php echo $this->method ?>">
+	<table>
+		<thead>
+			<tr>
+				<th><label for="url"><?php echo $form->getLabel('url') ?>:</label></th>
+				<th><?php echo $form->getLabel('shortUrl') ?>:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="text" name="url" value="<?php echo $form->getValue('url') ?>" id="url" class="input-text">
+					<input type="submit" value="Do!">
+					<div id="url-messages">
+						<?php
+							$messages = $form->getMessages('url');
+							if (is_array($messages)) {
+								echo '<div class="error">', implode('</div><div class="error">', $messages), '</div>';
+							}
+						?>
+					</div>
+				</td>
+				<td><span id="short-url"><?php echo $form->getValue('shortUrl') /* if visitor disabled javascript*/ ?></span></td>
+			</tr>
+		</tbody>
+	</table>
+</form>

@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS `url`;
+CREATE TABLE IF NOT EXISTS `url` (
+  `id` bigint NOT NULL auto_increment,
+  `longurl` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
