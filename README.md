@@ -1,4 +1,6 @@
 Test application "URL shortener"
+================================
+
 This appication was made according to test task http://www.xiag.ch/testtask/ and 
 recomendations http://blog.xiag.ru/2012/10/reminder-for-candidates.html
 
@@ -11,15 +13,16 @@ Application was created from the scratch during 2 evenings.
 * AJAX on native javascript
 
 
-
+All PHP classes are shown at [main_classes](https://raw.github.com/pvolyntsev/url-shortener/master/docs/main_classes.png) and [classes](https://raw.github.com/pvolyntsev/url-shortener/master/docs/classes.png)
 
 
 REQUIREMENTS:
-
+-------------
 PHP 5.3, MYSQL 5.5, NGINX, PHP-FPM
 
 
 INSTALLATION:
+-------------
 
 -- 1. install software (for debian/ubuntu)
 
@@ -83,6 +86,7 @@ mysql shell
 -- 8. load database dump from /var/www/url.com/dump_url.sql
 
 for example
+
     $ mysql -u{adminLogin} -p{adminPassword} {databaseName} < /var/www/url.com/dump_url.sql
 
 
@@ -98,7 +102,9 @@ if you use virtual machine to run application, add the same line into 'hosts' fi
 -- 10. open http://dev-url.com/ in browser
 
 
--- 11. if database name, database user login or password differ from those are in this manual, you need manually change options in /var/www/url.com/app/config/app.php
+CONFIGURING
+-------------
+If database name, database user login or password differ from those are in this manual, you need manually change options in /var/www/url.com/app/config/app.php
 
 
     ...
