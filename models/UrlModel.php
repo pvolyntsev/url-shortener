@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class provides access to database table 'url' in object manner
+ * That also called ORM (Object-relational mapping)
+ */
 class UrlModel extends AppModel {
 
 	/**
@@ -22,7 +26,7 @@ class UrlModel extends AppModel {
 
 	/**
 	 * Method must return the name of the column, which is the primary key of the table.
-	 *    Or array of names if primary key is complex
+	 *    TODO Or array of names if primary key is complex
 	 * @return string|string[]
 	 */
 	public static function getPrimaryKey() {
