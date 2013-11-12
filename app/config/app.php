@@ -27,10 +27,8 @@ return array(
 	'db' => array(
 		'class' => 'AppPdoConnection',
 		'connectionString' => 'mysql:host=127.0.0.1;dbname=url',
-		'emulatePrepare' => true,
 		'username' => 'url_rw',
 		'password' => 'user-password',
-		'charset' => 'utf8',
 	),
 
 	// Configuration for URL rounting component
