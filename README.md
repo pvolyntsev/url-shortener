@@ -116,3 +116,15 @@ If database name, database user login or password differ from those are in this 
    		'password' => 'user-password',
    	),
     ...
+
+
+After install on production you need to set your domain in nginx configuration file /var/www/url.com/app/config/url.com.conf
+
+    server {
+        ....
+        server_name {YOURDOMAIN} dev-url.com url.com;
+    ...
+
+Then reload configuration
+
+    $ sudo /etc/init.d/nginx reload
