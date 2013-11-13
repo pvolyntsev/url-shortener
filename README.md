@@ -5,7 +5,7 @@ This appication was made according to test task http://www.xiag.ch/testtask/ and
 recomendations http://blog.xiag.ru/2012/10/reminder-for-candidates.html
 
 
-Application was created from the scratch during 2 evenings.
+Application was created from the scratch during 2 evenings almost without COPY&PASTE (except models/AlphaId.php and models/Form/Validate/Url.php)
 * MVC patten (see AppController.php, AppForm.php, AppModel.php, AppView.php)
 * ORM-like database access (see AppDbConnection.php, ApModel.php)
 * MVVM pattern (see AppForm.php)
