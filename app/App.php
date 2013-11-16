@@ -6,6 +6,7 @@
  * @method static AppResponse response()
  * @method static AppRouter router()
  * @method static AppPdoConnection db()
+ * @method static AlphaId alphaid()
  */
 class App {
 

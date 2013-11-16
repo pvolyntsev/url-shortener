@@ -19,13 +19,13 @@ class FormController extends AppController {
 				$existsUrlRecord = UrlModel::findOneByLongurl($form->getValue('url'));
 				if (false!==$existsUrlRecord) {
 					// alredy exists - use it
-					$shortURI = AlphaId::toAlpha($existsUrlRecord->id);
+					$shortURI = App::alphaid()->toAlpha($existsUrlRecord->id);
 				} else {
 					// not exists - create new
 					$urlRecord = new UrlModel;
 					$urlRecord->longurl = $form->getValue('url');
 					$urlRecord->save();
-					$shortURI = AlphaId::toAlpha($urlRecord->id);
+					$shortURI = App::alphaid()->toAlpha($urlRecord->id);
 				}
 
 				$shortURL = App::router()->createUrl('Redirector', 'redirect', array('url' => $shortURI));

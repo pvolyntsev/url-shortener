@@ -45,4 +45,11 @@ return array(
 			'/^(?<url>[a-zA-Z0-9]{1,6})$/' => array('Redirector', 'redirect', array('url' => ':url')),
 		),
 	),
+
+	// Configuration for AlphaId component
+	'alphaid' => array(
+		'class' => 'AlphaId',
+		'min_length' => 3,
+		'passkey' => '(*)POJ#Y*(UPOJKHSGYDY*UH#&TRUFWHS*DUHDGT&(U@R#T&WDUIHOUGSQ(*YUIEHUGFW&TY*',
+	),
 );

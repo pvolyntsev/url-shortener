@@ -8,7 +8,7 @@ class RedirectorController extends AppController {
 	protected function redirectAction() {
 
 		$shortURI = App::request()->getQueryVar('url');
-		$shortURIId = AlphaId::toId($shortURI);
+		$shortURIId = App::alphaid()->toId($shortURI);
 
 		/** @var $urlRecord UrlModel */
 		$urlRecord = UrlModel::findOneByPk($shortURIId);
