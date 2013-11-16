@@ -15,6 +15,10 @@ Application was created from the scratch during 2 evenings almost without COPY&P
 
 All PHP classes are shown at [base classes](https://raw.github.com/pvolyntsev/url-shortener/master/docs/main_classes.png) and [application classes](https://raw.github.com/pvolyntsev/url-shortener/master/docs/classes.png)
 
+DEMO:
+-----
+You can try demo at http://url-sh.copist.ru/
+
 
 REQUIREMENTS:
 -------------
@@ -26,9 +30,11 @@ INSTALLATION:
 
 -- 1. install software (for debian/ubuntu)
 
-    $ sudo apt-get install php5 php5-fpm nginx php5-mysql mysql-client-core-5.5 mysql-server
+    $ sudo apt-get install php5 php5-mysql mysql-client-core-5.5 mysql-server
+    
+    You can use NGINX or APACHE web server (not tested with Apache)
 
-
+    $ sudo nginx php5-fpm
 
 -- 2. may need some manual configuration ...
 
@@ -43,7 +49,7 @@ for example create database named 'url'
 
 mysql shell
 
-    > CREATE DATABASE IF NOT EXISTS `url`;
+    > CREATE DATABASE IF NOT EXISTS `url` DEFAULT CHARACTER SET utf8;
     > QUIT;
 
 
