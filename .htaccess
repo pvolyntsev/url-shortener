@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# redirect from http://domain/index.php?url=23e2323 to http://domain/23e2323
+#       or from http://domain/?url=23e2323 to http://domain/23e2323
+RewriteCond %{THE_REQUEST} ^(GET|HEAD)\ /(index\.php)?\?url=([a-zA-Z0-9]+)([^\ ]*)
+RewriteRule ^ /%3?%4 [L,R=301]
+
+# rewrite query from http://domain/23e2323 to http://domain/?url=23e2323 without redirect
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9]+)/?$ /?url=$1 [L,QSA]
