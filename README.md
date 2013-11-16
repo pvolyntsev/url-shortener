@@ -5,7 +5,7 @@ This appication was made according to test task http://www.xiag.ch/testtask/ and
 recomendations http://blog.xiag.ru/2012/10/reminder-for-candidates.html
 
 
-Application was created from the scratch during 2 evenings.
+Application was created from the scratch during 2 evenings almost without COPY&PASTE (except models/AlphaId.php and models/Form/Validate/Url.php)
 * MVC patten (see AppController.php, AppForm.php, AppModel.php, AppView.php)
 * ORM-like database access (see AppDbConnection.php, ApModel.php)
 * MVVM pattern (see AppForm.php)
@@ -116,3 +116,15 @@ If database name, database user login or password differ from those are in this 
    		'password' => 'user-password',
    	),
     ...
+
+
+After install on production you need to set your domain in nginx configuration file /var/www/url.com/app/config/url.com.conf
+
+    server {
+        ....
+        server_name {YOURDOMAIN} dev-url.com url.com;
+    ...
+
+Then reload configuration
+
+    $ sudo /etc/init.d/nginx reload
