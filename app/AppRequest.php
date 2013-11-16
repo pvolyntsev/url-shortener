@@ -206,7 +206,7 @@ class AppRequest {
 	}
 
 	public function getBaseUrl() {
-		$protocol = $_SERVER['HTTPS'] ? 'https' : 'http';
+		$protocol = isset($_SERVER['HTTPS']) ? 'https' : 'http';
 		$host = $_SERVER['SERVER_NAME'];
 		$port =
 			(
