@@ -30,7 +30,7 @@ INSTALLATION:
     
     You can use NGINX or APACHE web server (not tested with Apache)
 
-    $ sudo nginx php5-fpm
+    $ sudo apt-get install nginx php5-fpm
 
 -- 2. may need some manual configuration ...
 
