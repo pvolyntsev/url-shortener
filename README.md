@@ -72,9 +72,9 @@ mysql shell
 
 
 
--- 6. download web application (need account at github.com) into prepared directory /var/www/url
+-- 6. download web application into prepared directory /var/www/url.com
 
-    $ git clone git@github.com:pvolyntsev/url-shortener.git /var/www/url
+    $ git clone https://github.com/pvolyntsev/url-shortener.git /var/www/url.com
 
 
 
